@@ -1,10 +1,13 @@
+# Importation
 import random
 from words import word_list
 
+# Getting word
 def get_word():
     word = random.choice(word_list)
     return word.upper()
 
+# Play function
 def play(word):
     word_completion = '_' * len(word)
     guessed = False
@@ -55,9 +58,11 @@ def play(word):
     else:
         print('Sorry, je hebt geen levens meer. Het woord was ' , word)
 
+# Displaying lives
 def display_lives(tries):
     print('Je hebt op dit moment nog ' , tries , ' levens!')
 
+# Main function
 def main():
     word = get_word()
     play(word)
@@ -65,5 +70,6 @@ def main():
         word = get_word()
         play(word)
 
+# Checking file
 if __name__ == '__main__':
     main()
